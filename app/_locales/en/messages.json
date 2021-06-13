@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "conciergerie",
+    "description": "The name of the application"
+  },
+  "appShortName": {
+    "message": "conciergery",
+    "description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
+  },
+  "appDescription": {
+    "message": "SGX-enabled, WebAssembly-compiled and Rust-powered password managing browser extension.",
+    "description": "The description of the application"
+  }
+}
