@@ -2,4 +2,8 @@ browser.runtime.onInstalled.addListener((details) => {
   console.log('previousVersion', details.previousVersion)
 })
 
-console.log(`'Allo 'Allo! Event Page`)
+browser.browserAction.setBadgeText({
+  text: `'Allo`
+})
+
+console.log(`'Allo 'Allo! Event Page for Browser Action`)
