@@ -6,7 +6,7 @@ async function launchBackend() {
     obtainForm.setAttribute("hidden", true);
     errorPrompt.setAttribute("hidden", true);
     successPrompt.setAttribute("hidden", true);
-    obtainPass.setAttribute("hidden", true);
+    obtainPassContainer.setAttribute("hidden", true);
 
     mainPrompt.removeAttribute("hidden");
     await init();
@@ -45,8 +45,10 @@ async function createCred() {
 
     let isOk
 
-    try { isOk = create_cred(Cred.from(signLogin.value, signPass.value), Cred.from(createLogin.value, createPass.value)); }
-    catch (e) { errorDisplay(isOk); }
+    try {
+        isOk = create_cred(Cred.from(signLogin.value, signPass.value),
+            Cred.from(createLogin.value, createPass.value));
+    } catch (e) { errorDisplay(isOk); }
 
     alternateForms(!!isOk);
 
@@ -91,7 +93,7 @@ async function obtainCred() {
 
     if (!!pass) {
         obtainPass.value = pass;
-        obtainPass.removeAttribute("hidden");
+        obtainPassContainer.removeAttribute("hidden");
     }
 
     alternateForms(true);
@@ -142,14 +144,14 @@ let createBtn;
 let mainPrompt;
 let successPrompt;
 let errorPrompt;
-let errorMessage;
+let obtainPassContainer;
 let reinitBtn;
 
 function configAliases() {
+    obtainPassContainer = document.getElementById("id_obtain_pass_container");
     mainPrompt = document.getElementById("id_main_prompt");
     successPrompt = document.getElementById("id_success_prompt");
     errorPrompt = document.getElementById("id_error_prompt");
-    errorMessage = document.getElementById("id_error_message");
     reinitBtn = document.getElementById("id_reinit_btn");
 
     signForm = document.getElementById("id_sign_form");
