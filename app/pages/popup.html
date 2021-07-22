@@ -1,14 +1,87 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8" />
   <title>Popup</title>
   <link rel="stylesheet" type="text/css" href="../styles/popup.css">
+
+  <script type="text/javascript" src="../scripts/config.js"></script>
+  <script type="text/javascript" src="../scripts/popup.js"></script>
 </head>
+
 <body>
+  <header>
+    <h1>Conciergerie</h1>
 
-  <h1>Popup</h1>
+    <h2 id="id_main_prompt">Loading…</h2>
+    <h3 id="id_error_prompt" hidden style="color: brown;">Should not appear</h3>
+    <h3 id="id_success_prompt" hidden style="color: darkgreen;">Should not appear</h3>
+    <p id="id_error_message" hidden>idem</p>
+  </header>
+  <main>
+    <form id="id_sign_form" hidden>
+      <h2 id="id_sign_prompt">Should not appear</h2>
+      <div class="input-container">
+        <span class="label-container">
+          <label for="si_login">Username</label>
+        </span>
+        <input type="text" id="id_sign_login" name="na_si_login" placeholder="Your login" />
+      </div>
+      <div class="input-container">
+        <span class="label-container">
+          <label for="si_pass">Password</label>
+        </span>
+        <input type="password" id="id_sign_pass" name="na_si_pass" placeholder="Your master password" />
+      </div>
+      <div class="input-container">
+        <input type="button" id="id_sign_btn" name="na_button" value="Submit" />
+      </div>
+    </form>
 
-  <script src="../scripts/popup.js"></script>
+    <form id="id_create_form" hidden>
+      <h2>Credential creation</h2>
+      <div class="input-container">
+        <span class="label-container">
+          <label for="cc_login">Username</label>
+        </span>
+        <input type="text" id="id_create_login" name="na_cc_login" placeholder="Username" />
+      </div>
+      <div class="input-container">
+        <span class="label-container">
+          <label for="cc_pass">Password</label>
+        </span>
+        <input type="password" id="id_create_pass" name="na_cc_pass" placeholder="Password" />
+      </div>
+      <div class="input-container">
+        <input type="button" id="id_create_btn" name="na_button" value="Create" />
+      </div>
+    </form>
+    <br/><br/>
+    <form id="id_obtain_form" hidden>
+      <h2>Credential recovery</h2>
+      <div class="input-container">
+        <span class="label-container">
+          <label for="cr_login">Username</label>
+        </span>
+        <input type="text" id="id_obtain_login" name="na_cr_login" placeholder="Username" />
+      </div>
+      <div class="input-container">
+        <span class="label-container">
+          <label for="cr_pass">Password</label>
+        </span>
+        <input type="text" id="id_obtain_pass" name="na_cr_pass" placeholder="Corresponding pass" readonly />
+      </div>
+      
+      <div class="input-container">
+        <input type="button" id="id_obtain_btn" name="na_button" value="Recover" />
+      </div>
+    </form>
+  </main>
+  <br/><br/><br/>
+  <footer>
+    <input type="button" id="id_reinit_btn" value="Reinitialize DB" />
+  </footer>
 </body>
+
 </html>
