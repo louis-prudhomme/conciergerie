@@ -80,7 +80,8 @@ function errorDisplay(error) {
 
     errorPrompt.removeAttribute("hidden");
 
-    console.error(error.stack);
+    if(!!error) console.error(error);
+    if (!!error.stack) console.error(error.stack);
 }
 
 async function obtainCred() {
